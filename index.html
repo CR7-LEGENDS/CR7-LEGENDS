@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CR7 LEGENDS — Cristiano Ronaldo's career, clubs, trophies, records and 200-photo archive.">
+<title>CR7 LEGENDS | Cristiano Ronaldo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{--gold:#e8bd62;--bg:#080808;--panel:#151515;--muted:#b5b5b5;--line:#49391d}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{margin:0;background:var(--bg);color:#f6f3eb;font-family:Poppins,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+.wrap{width:min(1160px,92%);margin:auto}
+.gold{color:var(--gold)}
+header{position:sticky;top:0;z-index:20;background:#080808ed;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font:900 21px Orbitron;color:var(--gold);letter-spacing:1px}
+.links{display:flex;gap:17px;flex-wrap:wrap}
+.links a{font-size:11px;font-weight:700;color:#ddd}
+.links a:hover{color:var(--gold)}
+.menu{display:none;background:none;color:var(--gold);border:0;font-size:27px}
+.hero{min-height:78vh;display:grid;align-items:center;background:radial-gradient(ellipse at 80% 45%,#b88a3330,transparent 45%),linear-gradient(110deg,#080808,#171208)}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:45px;align-items:center;padding:60px 0}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;font-weight:700}
+.hero h1{font:900 clamp(42px,7vw,82px)/1.08 Orbitron;margin:18px 0}
+.hero h1 span{color:var(--gold)}
+.hero p,.copy{color:var(--muted);line-height:1.9}
+.hero-photo{width:100%;height:480px;object-fit:cover;object-position:top;border:1px solid var(--gold);border-radius:12px;background:#171717}
+.btn{display:inline-block;padding:12px 19px;background:var(--gold);color:#080808;font-weight:700;border:1px solid var(--gold);border-radius:3px;margin:10px 8px 0 0}
+.btn.alt{background:transparent;color:var(--gold)}
+.ticker{text-align:center;padding:13px;background:var(--gold);color:#111;font:700 12px Orbitron;letter-spacing:2px}
+section{padding:78px 0}
+.heading{text-align:center;margin-bottom:38px}
+.heading h2{font:900 clamp(25px,4vw,40px) Orbitron;margin:0}
+.heading p{color:var(--muted)}
+.rule{height:3px;width:68px;background:var(--gold);margin:16px auto}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding:28px 0}
+.stat{background:var(--panel);padding:20px;text-align:center;border-bottom:2px solid var(--gold)}
+.stat strong{display:block;color:var(--gold);font:700 27px Orbitron}
+.stat span{font-size:11px;color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.feature{width:100%;height:370px;object-fit:cover;border-radius:9px;border:1px solid var(--line);background:#171717}
+.copy h3{color:var(--gold);font:700 20px Orbitron}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.fact{background:var(--panel);padding:13px;border-left:2px solid var(--gold);font-size:13px}
+.fact b{display:block;color:var(--gold);font-size:11px}
+.timeline{max-width:850px;margin:auto;border-left:2px solid var(--gold);padding-left:25px}
+.event{position:relative;background:var(--panel);padding:20px;margin:0 0 17px;border-radius:7px}
+.event:before{content:"";position:absolute;left:-32px;top:25px;width:12px;height:12px;background:var(--gold);border-radius:50%}
+.event h3{margin:0 0 8px;color:var(--gold)}
+.event p{margin:0;color:var(--muted);line-height:1.8;font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.tile{background:var(--panel);border:1px solid #30291d;border-radius:8px;padding:20px}
+.tile h3{color:var(--gold);font:700 15px Orbitron}
+.tile p{color:var(--muted);font-size:13px;line-height:1.8}
+.trophies{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.cup{background:linear-gradient(140deg,#211a0c,#121212);border:1px solid var(--line);padding:20px;text-align:center;border-radius:8px}
+.cup .emoji{font-size:30px}
+.cup h3{color:var(--gold);font-size:13px}
+.cup p{font-size:11px;color:var(--muted);line-height:1.6}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:0 0 25px}
+.toolbar input,.toolbar select{background:#171717;color:white;border:1px solid var(--line);padding:12px;border-radius:5px;min-width:190px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.photo{background:var(--panel);border:1px solid #30291d;border-radius:7px;overflow:hidden}
+.photo img{display:block;width:100%;height:205px;object-fit:cover;cursor:zoom-in;background:#222}
+.photo-body{padding:13px}
+.photo-body h3{font-size:13px;color:var(--gold);margin:0 0 7px}
+.photo-body p{font-size:11px;line-height:1.7;color:var(--muted);margin:0}
+.photo-body small{display:block;color:#d9c18c;margin-bottom:6px}
+.empty{display:none;text-align:center;color:var(--muted);padding:25px}
+.quiz{max-width:760px;margin:auto;background:var(--panel);padding:25px;border:1px solid var(--line);border-radius:8px}
+.q{padding:15px 0;border-bottom:1px solid #30291d}
+.q p{font-weight:600}
+.q label{display:block;background:#222;padding:9px;margin:7px 0;border-radius:4px;font-size:13px}
+.q input{accent-color:var(--gold)}
+.quiz button{cursor:pointer}
+.score{color:var(--gold);font-weight:700;margin-top:15px}
+.final{text-align:center;background:linear-gradient(#000b,#000d),radial-gradient(ellipse,#72521c,#080808);padding:90px 15px}
+.final h2{font:900 clamp(32px,6vw,65px) Orbitron;color:var(--gold)}
+footer{text-align:center;padding:35px 12px;border-top:1px solid var(--line);color:#999;font-size:12px;line-height:2}
+footer b{color:var(--gold)}
+.lightbox{display:none;position:fixed;inset:0;background:#000e;z-index:50;align-items:center;justify-content:center;padding:25px}
+.lightbox.show{display:flex}
+.lightbox img{max-width:94vw;max-height:86vh;border:2px solid var(--gold)}
+.close{position:absolute;right:20px;top:8px;background:none;border:0;color:white;font-size:42px}
+.top{position:fixed;bottom:18px;right:18px;border:0;border-radius:50%;background:var(--gold);width:43px;height:43px;font-size:20px;display:none;z-index:25}
+.top.show{display:block}
+.note{font-size:11px;color:#888;text-align:center;margin-top:18px}
+@media(max-width:850px){
+.links{display:none;position:absolute;top:72px;left:0;right:0;background:#080808;padding:20px;flex-direction:column}
+.links.open{display:flex}
+.menu{display:block}
+.hero-grid,.two{grid-template-columns:1fr}
+.hero{text-align:center}
+.hero-photo{height:360px}
+.gallery{grid-template-columns:repeat(3,1fr)}
+.grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:560px){
+.stats{grid-template-columns:repeat(2,1fr)}
+.gallery{grid-template-columns:repeat(2,1fr)}
+.trophies{grid-template-columns:repeat(2,1fr)}
+.grid{grid-template-columns:1fr}
+.photo img{height:155px}
+.facts{grid-template-columns:1fr}
+.feature{height:280px}
+}
+</style>
+</head>
+
+<body>
+<header>
+<nav class="wrap">
+<a class="logo" href="#home">CR7 LEGENDS</a>
+<button class="menu" id="menu" aria-label="Open navigation">☰</button>
+<div class="links" id="links">
+<a href="#bio">BIOGRAPHY</a>
+<a href="#journey">CAREER</a>
+<a href="#clubs">CLUBS</a>
+<a href="#trophies">TROPHIES</a>
+<a href="#records">RECORDS</a>
+<a href="#portugal">PORTUGAL</a>
+<a href="#gallery">GALLERY</a>
+<a href="#quiz">QUIZ</a>
+</div>
+</nav>
+</header>
+
+<main id="home">
+
+<section class="hero">
+<div class="wrap hero-grid">
+<div>
+<div class="eyebrow">THE STORY OF A FOOTBALL ICON</div>
+<h1>CRISTIANO<br><span>RONALDO</span></h1>
+<p>Talent opens the door. Discipline, ambition and consistency keep it open. Explore the career of a player who conquered leagues, lifted major trophies and set extraordinary standards across generations.</p>
+<a class="btn" href="#journey">EXPLORE HIS JOURNEY</a>
+<a class="btn alt" href="#gallery">VIEW 200 PHOTOS</a>
+</div>
+<img class="hero-photo" src="./Images/cr7-main.jpg" alt="Cristiano Ronaldo" onerror="this.onerror=null;this.src='./Mega-Images/cr7-icons-01.jpg'">
+</div>
+</section>
+
+<div class="ticker">DISCIPLINE • AMBITION • HARD WORK • LEGACY • SIUUU</div>
+
+<div class="wrap stats">
+<div class="stat"><strong>5</strong><span>Ballon d'Or awards</span></div>
+<div class="stat"><strong>5</strong><span>UEFA Champions League titles</span></div>
+<div class="stat"><strong>2016</strong><span>European Champion with Portugal</span></div>
+<div class="stat"><strong>200+</strong><span>Senior international appearances milestone passed</span></div>
+</div>
+
+<section id="bio">
+<div class="wrap">
+<div class="heading">
+<h2>THE <span class="gold">BIOGRAPHY</span></h2>
+<div class="rule"></div>
+<p>From Madeira to the world's biggest football stages</p>
+</div>
+
+<div class="two">
+<img class="feature" src="./Mega-Images/sporting-01.jpg" alt="Ronaldo early career">
+<div class="copy">
+<h3>THE BOY FROM MADEIRA</h3>
+<p>Cristiano Ronaldo dos Santos Aveiro was born on 5 February 1985 in Funchal, on the Portuguese island of Madeira. He joined Sporting CP's academy as a teenager and moved away from home to pursue football. His senior performances attracted Manchester United, who signed him in 2003.</p>
+<p>At United, Real Madrid, Juventus, back at United, and later Al Nassr, Ronaldo repeatedly adapted his game. He began as a creative wide player and developed into a prolific forward known for movement, aerial ability, powerful finishing and an exceptional drive to improve.</p>
+<div class="facts">
+<div class="fact"><b>FULL NAME</b>Cristiano Ronaldo dos Santos Aveiro</div>
+<div class="fact"><b>DATE OF BIRTH</b>5 February 1985</div>
+<div class="fact"><b>PLACE OF BIRTH</b>Funchal, Madeira, Portugal</div>
+<div class="fact"><b>POSITION</b>Forward</div>
+<div class="fact"><b>STRONG FOOT</b>Right</div>
+<div class="fact"><b>NATIONAL TEAM</b>Portugal</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="journey">
+<div class="wrap">
+<div class="heading">
+<h2>THE <span class="gold">CAREER JOURNEY</span></h2>
+<div class="rule"></div>
+<p>Key chapters in a remarkable football life</p>
+</div>
+
+<div class="timeline">
+<article class="event"><h3>1985 — Madeira, Portugal</h3><p>Ronaldo is born in Funchal. Football becomes his focus from an early age, and his talent takes him from local youth football to Sporting CP's academy.</p></article>
+<article class="event"><h3>2002 — Sporting CP first team</h3><p>He makes his senior breakthrough at Sporting. His speed, dribbling and confidence attract attention from leading European clubs.</p></article>
+<article class="event"><h3>2003–2009 — Manchester United</h3><p>Ronaldo joins United as a teenager. He develops into a world-class attacker, wins three Premier League titles, the 2008 UEFA Champions League and his first Ballon d'Or in 2008.</p></article>
+<article class="event"><h3>2009–2018 — Real Madrid</h3><p>He becomes Real Madrid's all-time leading scorer, wins four Champions League titles with the club and establishes one of the most prolific scoring records in football history.</p></article>
+<article class="event"><h3>2018–2021 — Juventus</h3><p>Ronaldo takes on Serie A, wins two league titles and a Coppa Italia, and continues to score at a high level in a new football environment.</p></article>
+<article class="event"><h3>2021–2022 — Manchester United return</h3><p>He returns to Old Trafford and adds another chapter to his relationship with the club, scoring important goals during his second spell.</p></article>
+<article class="event"><h3>2023–present — Al Nassr</h3><p>Ronaldo begins a new chapter in Saudi Arabia. His arrival draws worldwide attention to the Saudi Pro League and adds a new dimension to his career.</p></article>
+<article class="event"><h3>Portugal — International legacy</h3><p>He captains Portugal to UEFA Euro 2016 and the inaugural UEFA Nations League title in 2019. He becomes the men's international all-time leading goalscorer.</p></article>
+</div>
+</div>
+</section>
+
+<section id="clubs">
+<div class="wrap">
+<div class="heading">
+<h2>THE <span class="gold">CLUB CHAPTERS</span></h2>
+<div class="rule"></div>
+<p>Different leagues. Different challenges. One extraordinary career.</p>
+</div>
+
+<div class="grid">
+<article class="tile"><h3>SPORTING CP</h3><p>Sporting's academy shaped Ronaldo's early football education. At the senior level he displayed the acceleration, close control and fearless attacking style that made top clubs take notice. His performance against Manchester United in 2003 helped lead to his transfer to England.</p></article>
+<article class="tile"><h3>MANCHESTER UNITED</h3><p>His first United spell transformed him into a global star. He learned to balance flair with end product, developed his physical game and became a decisive scorer. The 2007–08 season brought the Premier League, Champions League and Ballon d'Or.</p></article>
+<article class="tile"><h3>REAL MADRID</h3><p>Madrid saw Ronaldo reach extraordinary scoring levels. His off-ball movement, finishing with either foot, heading and ability to deliver in major matches made him central to a historic era, including four Champions League wins with the club.</p></article>
+<article class="tile"><h3>JUVENTUS</h3><p>In Italy, Ronaldo adapted to a different tactical environment. He won two Serie A titles and the Coppa Italia, while remaining one of the team's main attacking threats.</p></article>
+<article class="tile"><h3>PORTUGAL</h3><p>Ronaldo's international career spans multiple generations. His leadership and goals helped Portugal win Euro 2016 and the 2019 Nations League, the country's first major senior men's international trophies.</p></article>
+<article class="tile"><h3>AL NASSR</h3><p>His move to Al Nassr in 2023 brought a new challenge in Saudi Arabia. He continues to compete, score and help raise the international profile of the league.</p></article>
+</div>
+</div>
+</section>
+
+<section id="trophies">
+<div class="wrap">
+<div class="heading">
+<h2>THE <span class="gold">TROPHY ROOM</span></h2>
+<div class="rule"></div>
+<p>Selected major team honours and individual awards</p>
+</div>
+
+<div class="trophies">
+<div class="cup"><div class="emoji">🏆</div><h3>UEFA CHAMPIONS LEAGUE</h3><p>Five titles: one with Manchester United and four with Real Madrid.</p></div>
+<div class="cup"><div class="emoji">🌍</div><h3>UEFA EURO 2016</h3><p>Portugal's first major senior men's international title.</p></div>
+<div class="cup"><div class="emoji">🏅</div><h3>NATIONS LEAGUE 2019</h3><p>Portugal won the inaugural UEFA Nations League tournament.</p></div>
+<div class="cup"><div class="emoji">🥇</div><h3>BALLON D'OR</h3><p>Five wins: 2008, 2013, 2014, 2016 and 2017.</p></div>
+<div class="cup"><div class="emoji">🔴</div><h3>PREMIER LEAGUE</h3><p>Three titles with Manchester United.</p></div>
+<div class="cup"><div class="emoji">⚪</div><h3>LA LIGA</h3><p>Two league titles with Real Madrid.</p></div>
+<div class="cup"><div class="emoji">⚫</div><h3>SERIE A</h3><p>Two league titles with Juventus.</p></div>
+<div class="cup"><div class="emoji">🇵🇹</div><h3>PORTUGAL</h3><p>Euro 2016 and UEFA Nations League 2019.</p></div>
+</div>
+<p class="note">This is a selected honours list, not a complete season-by-season medal inventory.</p>
+</div>
+</section>
+
+<section id="records">
+<div class="wrap">
+<div class="heading">
+<h2>RECORDS & <span class="gold">ACHIEVEMENTS</span></h2>
+<div class="rule"></div>
+<p>Milestones that define an era</p>
+</div>
+
+<div class="grid">
+<article class="tile"><h3>INTERNATIONAL GOALS</h3><p>Ronaldo is the men's international all-time leading goalscorer, a landmark built across World Cup qualifiers, European Championship campaigns and other Portugal fixtures.</p></article>
+<article class="tile"><h3>CHAMPIONS LEAGUE</h3><p>He is the competition's all-time leading scorer and has repeatedly delivered in knockout rounds and finals.</p></article>
+<article class="tile"><h3>REAL MADRID</h3><p>He is Real Madrid's all-time leading goalscorer, having scored more than 450 official goals for the club.</p></article>
+<article class="tile"><h3>FIVE BALLON D'OR AWARDS</h3><p>His five Ballon d'Or wins recognise his sustained excellence across different seasons and competitions.</p></article>
+<article class="tile"><h3>LONGEVITY</h3><p>He has remained productive across multiple decades, adapting his role and style as his career evolved.</p></article>
+<article class="tile"><h3>COMPLETE FORWARD</h3><p>His game combines movement, heading, acceleration, finishing, powerful shooting and a strong sense of positioning.</p></article>
+</div>
+</div>
+</section>
+
+<section id="portugal">
+<div class="wrap">
+<div class="heading">
+<h2>PORTUGAL <span class="gold">LEGEND</span></h2>
+<div class="rule"></div>
+</div>
+
+<div class="two">
+<img class="feature" src="./Mega-Images/portugal-01.jpg" alt="Ronaldo representing Portugal">
+<div class="copy">
+<h3>LEADING HIS COUNTRY</h3>
+<p>Ronaldo made his senior Portugal debut in 2003 and went on to become the nation's most-capped player and the men's international all-time leading goalscorer. His international career includes five FIFA World Cup tournaments and multiple UEFA European Championships.</p>
+<p>At Euro 2016, Portugal won the final against France to claim its first major senior men's international trophy. In 2019, Portugal won the inaugural UEFA Nations League. Those achievements became defining moments in the country's football history.</p>
+<p>His Portugal story is about more than goals: it includes leadership, responsibility, resilience and representing Madeira and the whole country on the biggest stage.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="wrap">
+<div class="heading">
+<h2>THE <span class="gold">200-PHOTO ARCHIVE</span></h2>
+<div class="rule"></div>
+<p>Browse your uploaded Mega-Images collection</p>
+</div>
+
+<div class="toolbar">
+<input id="search" type="search" placeholder="Search club, title or description...">
+<select id="filter">
+<option value="all">All collections — 200 photos</option>
+<option>Sporting CP</option>
+<option>Manchester United</option>
+<option>Real Madrid</option>
+<option>Juventus</option>
+<option>Portugal</option>
+<option>Al Nassr</option>
+<option>CR7 Iconic Moments</option>
+<option>CR7 Special Collection</option>
+</select>
+</div>
+
+<div class="gallery" id="galleryGrid"></div>
+<div class="empty" id="empty">No photos match your search.</div>
+<p class="note">Descriptions explain the career chapter represented by each collection. They do not claim to identify an exact match, date or event unless verified.</p>
+</div>
+</section>
+
+<section id="quiz">
+<div class="wrap">
+<div class="heading">
+<h2>THE CR7 <span class="gold">QUIZ</span></h2>
+<div class="rule"></div>
+<p>Test your Ronaldo knowledge</p>
+</div>
+<div class="quiz" id="quizBox"></div>
+</div>
+</section>
+
+<section class="final">
+<h2>THE LEGACY CONTINUES</h2>
+<p>NEVER GIVE UP • ALWAYS BELIEVE • SIUUU</p>
+<a class="btn" href="#home">BACK TO THE TOP</a>
+</section>
+
+</main>
+
+<footer>
+<b>CR7 LEGENDS</b><br>
+A fan-made tribute to Cristiano Ronaldo's football journey.<br>
+Made with passion by Abdul Sami.<br>
+<span>Unofficial fan website. Not affiliated with Cristiano Ronaldo or any football club.</span>
+</footer>
+
+<div class="lightbox" id="lightbox">
+<button class="close" id="close" aria-label="Close image">×</button>
+<img id="lightboxImg" alt="Expanded gallery image">
+</div>
+<button class="top" id="top" aria-label="Back to top">↑</button>
+
+<script>
+const photoFiles=["alnassr-01.jpg","alnassr-02.jpg","alnassr-03.jpg","alnassr-04.jpg","alnassr-05.jpg","alnassr-06.jpg","alnassr-07.jpg","alnassr-08.jpg","alnassr-09.jpg","alnassr-10.jpg","alnassr-11.jpg","alnassr-12.jpg","alnassr-13.jpg","alnassr-14.jpg","alnassr-15.jpg","alnassr-16.jpg","alnassr-17.jpg","alnassr-18.jpg","alnassr-19.jpg","alnassr-20.jpg","alnassr-21.jpg","alnassr-22.jpg","alnassr-23.jpg","alnassr-24.jpg","alnassr-25.jpg","alnassr-26.jpg","alnassr-31.jpg","alnassr-32.jpg","alnassr-33.jpg","alnassr-34.jpg","alnassr-35.jpg","alnassr-36.jpg","alnassr-37.jpg","alnassr-38.jpg","alnassr-39.jpg","alnassr-40.jpg","cr7-icons-01.jpg","cr7-icons-02.jpg","cr7-icons-03.jpg","cr7-icons-04.jpg","cr7-icons-05.jpg","cr7-icons-06.jpg","cr7-icons-07.jpg","cr7-icons-08.jpg","cr7-icons-09.jpg","cr7-icons-10.jpg","cr7-icons-11.jpg","cr7-icons-12.jpg","cr7-icons-13.jpg","cr7-icons-14.jpg","cr7-icons-15.jpg","cr7-icons-16.jpg","cr7-icons-17.jpg","cr7-icons-18.jpg","cr7-icons-19.jpg","cr7-icons-20.jpg","cr7-special-01.jpg","cr7-special-02.jpg","cr7-special-03.jpg","cr7-special-04.jpg","cr7-special-05.jpg","cr7-special-06.jpg","cr7-special-07.jpg","cr7-special-08.jpg","cr7-special-09.jpg","cr7-special-10.jpg","cr7-special-11.jpg","cr7-special-12.jpg","cr7-special-13.jpg","cr7-special-14.jpg","juventus-01.jpg","juventus-02.jpg","juventus-03.jpg","juventus-04.jpg","juventus-05.jpg","juventus-06.jpg","juventus-07.jpg","juventus-08.jpg","juventus-09.jpg","juventus-10.jpg","manutd-01.jpg","manutd-02.jpg","manutd-03.jpg","manutd-04.jpg","manutd-05.jpg","manutd-06.jpg","manutd-07.jpg","manutd-08.jpg","manutd-09.jpg","manutd-10.jpg","manutd-11.jpg","manutd-12.jpg","manutd-13.jpg","manutd-14.jpg","manutd-15.jpg","manutd-16.jpg","manutd-17.jpg","manutd-18.jpg","manutd-19.jpg","manutd-20.jpg","manutd-21.jpg","manutd-22.jpg","manutd-23.jpg","manutd-24.jpg","manutd-25.jpg","manutd-26.jpg","manutd-27.jpg","manutd-28.jpg","manutd-29.jpg","manutd-30.jpg","manutd-31.jpg","manutd-32.jpg","manutd-33.jpg","manutd-34.jpg","manutd-35.jpg","manutd-36.jpg","manutd-37.jpg","manutd-38.jpg","manutd-39.jpg","manutd-40.jpg","portugal-01.jpg","portugal-02.jpg","portugal-03.jpg","portugal-04.jpg","portugal-05.jpg","portugal-06.jpg","portugal-07.jpg","portugal-08.jpg","portugal-09.jpg","portugal-10.jpg","portugal-11.jpg","portugal-12.jpg","portugal-13.jpg","portugal-14.jpg","portugal-15.jpg","portugal-16.jpg","portugal-17.jpg","portugal-18.jpg","portugal-19.jpg","portugal-20.jpg","portugal-21.jpg","portugal-22.jpg","portugal-23.jpg","portugal-24.jpg","portugal-25.jpg","portugal-26.jpg","portugal-27.jpg","portugal-28.jpg","portugal-29.jpg","portugal-30.jpg","realmadrid-01.jpg","realmadrid-02.jpg","realmadrid-03.jpg","realmadrid-04.jpg","realmadrid-05.jpg","realmadrid-06.jpg","realmadrid-07.jpg","realmadrid-08.jpg","realmadrid-09.jpg","realmadrid-10.jpg","realmadrid-11.jpg","realmadrid-12.jpg","realmadrid-13.jpg","realmadrid-14.jpg","realmadrid-15.jpg","realmadrid-16.jpg","realmadrid-17.jpg","realmadrid-18.jpg","realmadrid-19.jpg","realmadrid-20.jpg","realmadrid-21.jpg","realmadrid-22.jpg","realmadrid-23.jpg","realmadrid-24.jpg","realmadrid-25.jpg","realmadrid-26.jpg","realmadrid-27.jpg","realmadrid-28.jpg","realmadrid-29.jpg","realmadrid-30.jpg","sporting-01.jpg","sporting-02.jpg","sporting-03.jpg","sporting-04.jpg","sporting-05.jpg","sporting-06.jpg","sporting-07.jpg","sporting-08.jpg","sporting-09.jpg","sporting-10.jpg","sporting-11.jpg","sporting-12.jpg","sporting-13.jpg","sporting-14.jpg","sporting-15.jpg","sporting-16.jpg","sporting-17.jpg","sporting-18.jpg","sporting-19.jpg","sporting-20.jpg"];
+
+const descriptions={
+"Sporting CP":"This image belongs to the Sporting CP chapter, when Ronaldo was developing from a gifted academy prospect into a first-team player. His pace, close control, confidence in one-on-one situations and willingness to take on defenders helped announce his talent to a wider audience. Sporting gave him the senior platform that led to his move to Manchester United in 2003.",
+"Manchester United":"This image belongs to Ronaldo’s Manchester United story. Under Sir Alex Ferguson, he developed from an exciting, skillful winger into a more complete attacker: improving his decision-making, movement, crossing, finishing and physical strength. His first United spell included the 2008 Premier League and Champions League triumphs; he later returned to the club in 2021.",
+"Real Madrid":"This image belongs to Ronaldo’s Real Madrid chapter (2009–2018), the most prolific club-scoring period of his career. He became the club’s all-time leading scorer, won four Champions League titles with Madrid, and formed a defining attacking partnership with teammates including Karim Benzema and Gareth Bale. His Madrid years featured extraordinary consistency in domestic and European competition.",
+"Juventus":"This image belongs to Ronaldo’s Juventus years (2018–2021). He adapted to Italian football, helped Juventus win two Serie A titles and a Coppa Italia, and continued to deliver goals in league and European matches. The move showed his ambition to test himself in another major football league.",
+"Portugal":"This image belongs to Ronaldo’s Portugal career. He became the national team’s most-capped player and men’s international top scorer. His major senior international honours include UEFA Euro 2016 and the 2019 UEFA Nations League. Across generations of teammates, he has remained a central figure for Portugal.",
+"Al Nassr":"This image belongs to Ronaldo’s Al Nassr chapter, which began in 2023. His arrival brought global attention to Saudi football. He has continued scoring, captaining the side in many matches and competing in domestic and continental tournaments. The collection includes his football life in Riyadh and the wider Saudi football scene.",
+"CR7 Iconic Moments":"This image is part of the collection of defining Ronaldo moments: celebrations, memorable performances, awards, training and career milestones. The wider story is one of elite athletic preparation, relentless practice, adaptability and sustained performance across different clubs and international tournaments.",
+"CR7 Special Collection":"This image belongs to the special Ronaldo collection, bringing together moments beyond a single club chapter. It celebrates the personality, dedication, celebrations, public appearances and milestones that have helped make Cristiano Ronaldo one of football’s most recognisable figures."
+};
+
+const titles={
+"Sporting CP":"Sporting CP — The beginning in Lisbon",
+"Manchester United":"Manchester United — The rise in Manchester",
+"Real Madrid":"Real Madrid — A record-breaking era",
+"Juventus":"Juventus — A new challenge in Italy",
+"Portugal":"Portugal — A leader for his country",
+"Al Nassr":"Al Nassr — A new chapter in Saudi Arabia",
+"CR7 Iconic Moments":"CR7 Iconic Moments — Defining a legacy",
+"CR7 Special Collection":"CR7 Special Collection — Beyond the match"
+};
+
+const photos=photoFiles.map(file=>{
+const key=file.startsWith("cr7-icons-")?"CR7 Iconic Moments":file.startsWith("cr7-special-")?"CR7 Special Collection":file.startsWith("manutd-")?"Manchester United":file.startsWith("realmadrid-")?"Real Madrid":file.startsWith("sporting-")?"Sporting CP":file.startsWith("juventus-")?"Juventus":file.startsWith("portugal-")?"Portugal":"Al Nassr";
+const n=(file.match(/(\d+)\./)||[])[1]||"";
+return{file,club:key,title:titles[key]+" · Photo "+n,description:descriptions[key]};
+});
+
+const grid=document.getElementById('galleryGrid');
+const search=document.getElementById('search');
+const filter=document.getElementById('filter');
+const empty=document.getElementById('empty');
+
+function render(){
+const term=search.value.trim().toLowerCase();
+const cat=filter.value;
+const shown=photos.filter(p=>(cat==='all'||p.club===cat)&&(`${p.club} ${p.title} ${p.description} ${p.file}`).toLowerCase().includes(term));
+
+grid.innerHTML=shown.map(p=>`
+<article class="photo">
+<img loading="lazy" src="./Mega-Images/${p.file}" alt="${p.title.replaceAll('"','&quot;')}" data-full="./Mega-Images/${p.file}">
+<div class="photo-body">
+<small>${p.club}</small>
+<h3>${p.title}</h3>
+<p>${p.description}</p>
+</div>
+</article>`).join('');
+
+empty.style.display=shown.length?'none':'block';
+}
+
+search.addEventListener('input',render);
+filter.addEventListener('change',render);
+render();
+
+grid.addEventListener('click',e=>{
+const img=e.target.closest('img');
+if(!img)return;
+document.getElementById('lightboxImg').src=img.dataset.full;
+document.getElementById('lightbox').classList.add('show');
+});
+
+function closeBox(){
+document.getElementById('lightbox').classList.remove('show');
+}
+
+document.getElementById('close').addEventListener('click',closeBox);
+document.getElementById('lightbox').addEventListener('click',e=>{
+if(e.target.id==='lightbox')closeBox();
+});
+document.addEventListener('keydown',e=>{
+if(e.key==='Escape')closeBox();
+});
+
+document.getElementById('menu').addEventListener('click',()=>{
+document.getElementById('links').classList.toggle('open');
+});
+
+document.querySelectorAll('.links a').forEach(a=>{
+a.addEventListener('click',()=>{
+document.getElementById('links').classList.remove('open');
+});
+});
+
+const topBtn=document.getElementById('top');
+window.addEventListener('scroll',()=>{
+topBtn.classList.toggle('show',window.scrollY>500);
+});
+topBtn.addEventListener('click',()=>{
+window.scrollTo({top:0,behavior:'smooth'});
+});
+
+const questions=[
+{q:'In which year was Cristiano Ronaldo born?',o:['1983','1985','1987','1989'],a:1,e:'Ronaldo was born on 5 February 1985.'},
+{q:'Which Portuguese club did he play for before Manchester United?',o:['Benfica','Porto','Sporting CP','Braga'],a:2,e:'Sporting CP was his first senior club.'},
+{q:'In which year did Ronaldo join Manchester United?',o:['2001','2003','2005','2007'],a:1,e:'He joined Manchester United in 2003.'},
+{q:'How many Ballon d’Or awards has he won?',o:['Three','Four','Five','Six'],a:2,e:'He won five Ballon d’Or awards.'},
+{q:'Which country does Ronaldo represent?',o:['Spain','Brazil','Portugal','Argentina'],a:2,e:'He represents Portugal.'},
+{q:'Which year did Portugal win UEFA Euro?',o:['2004','2012','2016','2020'],a:2,e:'Portugal won Euro 2016.'},
+{q:'Which Italian club did Ronaldo play for?',o:['AC Milan','Juventus','Inter','Roma'],a:1,e:'He played for Juventus from 2018 to 2021.'},
+{q:'Which club did Ronaldo join in Saudi Arabia in 2023?',o:['Al Hilal','Al Ittihad','Al Ahli','Al Nassr'],a:3,e:'He joined Al Nassr in 2023.'},
+{q:'How many UEFA Champions League titles has Ronaldo won?',o:['Three','Four','Five','Seven'],a:2,e:'He won five Champions League titles.'},
+{q:'What is Ronaldo’s famous celebration often called?',o:['Vamos','Siuuu','Calma','Dale'],a:1,e:'His famous celebration is known as “Siuuu”.'}
+];
+
+const qb=document.getElementById('quizBox');
+
+qb.innerHTML=questions.map((q,i)=>`
+<div class="q">
+<p>${i+1}. ${q.q}</p>
+${q.o.map((o,j)=>`<label><input type="radio" name="q${i}" value="${j}"> ${o}</label>`).join('')}
+<small class="explain" id="ex${i}" style="display:none;color:var(--gold)"></small>
+</div>`).join('')+
+'<button class="btn" id="submitQuiz">CHECK MY SCORE</button>'+
+'<button class="btn alt" id="resetQuiz">TRY AGAIN</button>'+
+'<div class="score" id="score"></div>';
+
+document.getElementById('submitQuiz').addEventListener('click',()=>{
+let score=0;
+questions.forEach((q,i)=>{
+const chosen=qb.querySelector(`input[name="q${i}"]:checked`);
+const ex=document.getElementById('ex'+i);
+ex.style.display='block';
+if(chosen&&Number(chosen.value)===q.a)score++;
+ex.textContent=(chosen&&Number(chosen.value)===q.a?'Correct! ':'Answer: '+q.o[q.a]+'. ')+q.e;
+});
+document.getElementById('score').textContent=`Your score: ${score} / ${questions.length}`;
+});
+
+document.getElementById('resetQuiz').addEventListener('click',()=>{
+qb.querySelectorAll('input').forEach(i=>i.checked=false);
+qb.querySelectorAll('.explain').forEach(e=>{
+e.style.display='none';
+e.textContent='';
+});
+document.getElementById('score').textContent='';
+});
+</script>
+</body>
+</html>
