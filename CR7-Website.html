@@ -1,0 +1,671 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CR7 LEGENDS | Cristiano Ronaldo</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+ --gold:#e5b957;
+ --black:#070707;
+ --card:#151515;
+ --grey:#aaa;
+}
+*{box-sizing:border-box;margin:0;padding:0;scroll-behavior:smooth}
+body{background:var(--black);color:white;font-family:Poppins,sans-serif}
+img{max-width:100%}
+a{text-decoration:none;color:inherit}
+button{cursor:pointer;font-family:inherit}
+.container{width:90%;max-width:1300px;margin:auto}
+section{padding:85px 0}
+.gold{color:var(--gold)}
+.heading{text-align:center;margin-bottom:42px}
+.heading h2{font:900 clamp(28px,5vw,44px) Orbitron,sans-serif}
+.heading p{color:var(--grey);margin-top:12px}
+.line{width:80px;height:4px;background:var(--gold);margin:17px auto}
+.btn{display:inline-block;padding:13px 22px;background:var(--gold);color:#000;font-weight:700;border:1px solid var(--gold);transition:.3s}
+.btn:hover{background:transparent;color:var(--gold)}
+header{position:sticky;top:0;z-index:1000;background:#080808ed;border-bottom:1px solid #59451f}
+nav{height:75px;display:flex;align-items:center;justify-content:space-between}
+.logo{font:900 23px Orbitron;color:var(--gold)}
+.nav-links{display:flex;gap:17px}
+.nav-links a{font-size:11px;font-weight:700}
+.nav-links a:hover{color:var(--gold)}
+.menu{display:none;background:none;border:0;color:white;font-size:27px}
+.hero{min-height:85vh;display:flex;align-items:center;background:radial-gradient(circle at 75% 50%,#d8ad5530,transparent 40%),linear-gradient(120deg,#050505,#1b160b)}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold);padding:10px 15px;letter-spacing:3px;font-size:11px;margin-bottom:20px}
+.hero h1{font:900 clamp(42px,7vw,82px)/1.1 Orbitron}
+.hero h1 span{color:var(--gold)}
+.hero h3{letter-spacing:5px;margin:20px 0}
+.hero p,.bio-text p{color:#bbb;line-height:2;margin-bottom:22px}
+.hero-image{height:520px;width:100%;object-fit:cover;object-position:top;border:2px solid var(--gold);border-radius:12px}
+.marquee{background:var(--gold);color:#000;padding:13px;text-align:center;font:700 13px Orbitron;letter-spacing:2px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;background:#111;padding:35px 8%}
+.stat{text-align:center}
+.stat h2{font:700 35px Orbitron;color:var(--gold)}
+.stat p{font-size:11px;color:var(--grey)}
+.bio-grid,.portugal-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:40px;align-items:center}
+.bio-image,.portugal-image{width:100%;height:430px;object-fit:cover;border:1px solid var(--gold);border-radius:10px}
+.bio-text h3,.portugal-grid h3{font:700 23px Orbitron;color:var(--gold);margin-bottom:20px}
+.details{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.detail{padding:14px;background:var(--card);border-left:3px solid var(--gold)}
+.detail small{display:block;color:var(--grey)}
+.detail strong{font-size:13px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.card{background:var(--card);border:1px solid #333;border-radius:10px;overflow:hidden;transition:.3s}
+.card:hover{transform:translateY(-6px);border-color:var(--gold)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-content{padding:20px}
+.card h3{font:700 15px Orbitron;color:var(--gold);margin-bottom:10px}
+.card p{font-size:13px;line-height:1.8;color:var(--grey)}
+.timeline{max-width:800px;margin:auto;border-left:2px solid var(--gold);padding-left:30px}
+.timeline-item{background:var(--card);padding:20px;margin-bottom:20px;border-radius:8px;position:relative}
+.timeline-item:before{content:"";position:absolute;width:13px;height:13px;border-radius:50%;background:var(--gold);left:-37px;top:25px}
+.timeline-item h3{color:var(--gold);margin-bottom:8px}
+.timeline-item p{color:var(--grey);line-height:1.8}
+.trophies{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.trophy{text-align:center;background:linear-gradient(140deg,#211a0d,#111);border:1px solid #59451f;padding:25px 12px;border-radius:10px}
+.trophy .symbol{font-size:35px}
+.trophy h3{font-size:14px;color:var(--gold);margin:10px 0}
+.trophy p{font-size:11px;color:var(--grey)}
+.records{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.record{background:var(--card);padding:23px;border-bottom:3px solid var(--gold);border-radius:8px}
+.record h3{color:var(--gold);font-size:15px;margin-bottom:10px}
+.record p{font-size:13px;color:var(--grey);line-height:1.8}
+.portugal{background:linear-gradient(110deg,#111a11,#151008)}
+.portugal-grid p{color:#bbb;line-height:2;margin-bottom:15px}
+.photo-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.photo-row img{width:100%;height:190px;object-fit:cover;border:1px solid #59451f;border-radius:7px}
+.search{display:block;width:min(500px,100%);margin:0 auto 28px;padding:14px;background:#181818;border:1px solid #59451f;color:white;border-radius:6px}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}
+.gallery-card{background:#151515;border:1px solid #333;border-radius:8px;overflow:hidden}
+.gallery-card img{width:100%;height:190px;object-fit:cover;display:block;cursor:zoom-in}
+.gallery-card p{padding:10px;color:var(--gold);font-size:12px}
+.gallery-card:hover{border-color:var(--gold)}
+.empty{text-align:center;color:var(--grey);display:none;padding:20px}
+.quiz-box{max-width:750px;margin:auto;padding:30px;background:var(--card);border:1px solid #59451f;border-radius:10px}
+.question{margin-bottom:22px}
+.question p{margin-bottom:10px;font-weight:600}
+.option{display:block;padding:11px;background:#222;margin:7px 0;border-radius:5px;cursor:pointer}
+.option input{accent-color:var(--gold);margin-right:8px}
+.result{color:var(--gold);font-weight:700;margin-top:20px}
+.final{text-align:center;padding:100px 20px;background:linear-gradient(#000b,#000c),url('./Images/siuuu.jpg') center/cover}
+.final h2{font:900 clamp(35px,6vw,70px) Orbitron;color:var(--gold)}
+.final p{margin:20px 0;letter-spacing:3px}
+footer{text-align:center;background:#050505;border-top:1px solid #59451f;padding:40px 15px}
+footer h2{font:900 24px Orbitron;color:var(--gold);margin-bottom:15px}
+footer p{font-size:12px;color:#888;line-height:2}
+.lightbox{display:none;position:fixed;inset:0;z-index:2000;background:#000e;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90%;max-height:85vh;object-fit:contain;border:2px solid var(--gold)}
+.close{position:absolute;top:15px;right:25px;background:none;color:white;border:0;font-size:40px}
+.back-top{position:fixed;bottom:20px;right:20px;background:var(--gold);border:0;border-radius:50%;width:45px;height:45px;font-size:22px;display:none;z-index:900}
+.back-top.show{display:block}
+@media(max-width:950px){
+ .nav-links{gap:9px}
+ .nav-links a{font-size:9px}
+ .gallery{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:750px){
+ .menu{display:block}
+ .nav-links{display:none;position:absolute;top:75px;left:0;width:100%;padding:22px 6%;background:#080808;flex-direction:column}
+ .nav-links.open{display:flex}
+ .nav-links a{font-size:13px}
+ .hero-grid,.bio-grid,.portugal-grid{grid-template-columns:1fr}
+ .hero{text-align:center;padding:60px 0}
+ .hero-image{height:390px}
+ .stats{grid-template-columns:repeat(2,1fr)}
+ .cards,.records{grid-template-columns:repeat(2,1fr)}
+ .trophies{grid-template-columns:repeat(2,1fr)}
+ .gallery{grid-template-columns:repeat(2,1fr)}
+ .photo-row{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:480px){
+ .cards,.records{grid-template-columns:1fr}
+ .gallery-card img{height:145px}
+ .details{grid-template-columns:1fr}
+ section{padding:65px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="container">
+<a class="logo" href="#home">CR7 LEGENDS</a>
+<button class="menu" id="menu" aria-label="Open menu">☰</button>
+<div class="nav-links" id="links">
+<a href="#home">HOME</a>
+<a href="#bio">BIOGRAPHY</a>
+<a href="#career">CAREER</a>
+<a href="#moments">MOMENTS</a>
+<a href="#trophies">TROPHIES</a>
+<a href="#records">RECORDS</a>
+<a href="#gallery">GALLERY</a>
+<a href="#quiz">QUIZ</a>
+</div>
+</nav>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-grid">
+<div>
+<div class="tag">THE LEGEND OF FOOTBALL</div>
+<h1>CRISTIANO <span>RONALDO</span></h1>
+<h3>THE NUMBER 7</h3>
+<p>A name that changed football forever. From Madeira to the world's biggest stadiums, Cristiano Ronaldo created a legendary journey through dedication, talent, discipline and hard work.</p>
+<a class="btn" href="#bio">EXPLORE HIS STORY</a>
+</div>
+<img class="hero-image" src="./Images/cr7-main.jpg" alt="Cristiano Ronaldo">
+</div>
+</section>
+
+<div class="marquee">CRISTIANO RONALDO ★ CR7 ★ SIUUU ★ PORTUGAL ★ REAL MADRID ★ MANCHESTER UNITED ★</div>
+
+<div class="stats">
+<div class="stat"><h2>7</h2><p>FAMOUS NUMBER</p></div>
+<div class="stat"><h2>5</h2><p>BALLON D'OR</p></div>
+<div class="stat"><h2>5</h2><p>CHAMPIONS LEAGUE</p></div>
+<div class="stat"><h2>2</h2><p>NATIONS LEAGUE</p></div>
+</div>
+
+<section id="bio">
+<div class="container">
+<div class="heading"><h2>THE <span class="gold">LEGEND</span></h2><div class="line"></div><p>Discover the man behind the legendary number 7.</p></div>
+<div class="bio-grid">
+<img class="bio-image" src="./Images/young-ronaldo.jpg" alt="Young Ronaldo">
+<div class="bio-text">
+<h3>CRISTIANO RONALDO</h3>
+<p>Cristiano Ronaldo dos Santos Aveiro is a Portuguese professional footballer widely regarded as one of the greatest players in football history.</p>
+<p>Born on 5 February 1985 in Funchal, Madeira, Ronaldo developed his football abilities from a young age. His journey began with Sporting CP and took him to Manchester United, Real Madrid, Juventus and Al Nassr.</p>
+<p>He is famous for his goalscoring, athletic ability, heading, speed, powerful shots and determination.</p>
+<div class="details">
+<div class="detail"><small>FULL NAME</small><strong>Cristiano Ronaldo dos Santos Aveiro</strong></div>
+<div class="detail"><small>BIRTH DATE</small><strong>5 February 1985</strong></div>
+<div class="detail"><small>BIRTHPLACE</small><strong>Funchal, Madeira</strong></div>
+<div class="detail"><small>NATIONALITY</small><strong>Portuguese</strong></div>
+<div class="detail"><small>POSITION</small><strong>Forward</strong></div>
+<div class="detail"><small>FAMOUS NUMBER</small><strong>7</strong></div>
+</div>
+</div>
+</div>
+<div class="photo-row">
+<img src="./Images/number-seven.jpg" alt="Number seven">
+<img src="./Images/ballondor.jpg" alt="Ballon d'Or">
+<img src="./Images/siuuu.jpg" alt="SIUUU">
+<img src="./Images/training.jpg" alt="Training">
+</div>
+</div>
+</section>
+
+<section id="career" style="background:#101010">
+<div class="container">
+<div class="heading"><h2>CAREER <span class="gold">JOURNEY</span></h2><div class="line"></div><p>From a young talent to a global football icon.</p></div>
+<div class="timeline">
+<div class="timeline-item"><h3>1985 — THE BEGINNING</h3><p>Born in Funchal, Madeira, Portugal.</p></div>
+<div class="timeline-item"><h3>SPORTING CP</h3><p>Developed through Sporting's academy and reached professional football.</p></div>
+<div class="timeline-item"><h3>2003 — MANCHESTER UNITED</h3><p>Joined Manchester United and began his rise to global stardom.</p></div>
+<div class="timeline-item"><h3>2008 — FIRST BALLON D'OR</h3><p>Won his first Ballon d'Or following an outstanding season.</p></div>
+<div class="timeline-item"><h3>2009 — REAL MADRID</h3><p>Joined Real Madrid and created one of the greatest chapters of his career.</p></div>
+<div class="timeline-item"><h3>2016 — EUROPEAN CHAMPION</h3><p>Portugal won Euro 2016, its first major international title.</p></div>
+<div class="timeline-item"><h3>2018 — JUVENTUS</h3><p>Started a new chapter in Italian football.</p></div>
+<div class="timeline-item"><h3>2021 — UNITED RETURN</h3><p>Returned to Manchester United.</p></div>
+<div class="timeline-item"><h3>2023 — AL NASSR</h3><p>Joined Al Nassr and continued his career in Saudi Arabia.</p></div>
+<div class="timeline-item"><h3>2025 — PORTUGAL TRIUMPH</h3><p>Portugal won the UEFA Nations League with Ronaldo in the squad.</p></div>
+</div>
+</div>
+</section>
+
+<section id="moments">
+<div class="container">
+<div class="heading"><h2>ICONIC <span class="gold">MOMENTS</span></h2><div class="line"></div><p>Unforgettable moments from his career.</p></div>
+<div class="cards">
+<div class="card"><img src="./Images/bicycle-kick.jpg" alt="Bicycle kick"><div class="card-content"><h3>THE BICYCLE KICK</h3><p>An extraordinary overhead kick against Juventus in the 2018 Champions League.</p></div></div>
+<div class="card"><img src="./Images/euro2016.jpg" alt="Euro 2016"><div class="card-content"><h3>EURO 2016</h3><p>Portugal's historic European Championship victory.</p></div></div>
+<div class="card"><img src="./Images/old-trafford.jpg" alt="Old Trafford"><div class="card-content"><h3>OLD TRAFFORD</h3><p>The stadium where Ronaldo developed into a world-class footballer.</p></div></div>
+<div class="card"><img src="./Images/madrid-presentation.jpg" alt="Madrid presentation"><div class="card-content"><h3>MADRID ARRIVAL</h3><p>The beginning of an extraordinary Real Madrid chapter.</p></div></div>
+<div class="card"><img src="./Images/ballon-2016.jpg" alt="Ballon d'Or"><div class="card-content"><h3>BALLON D'OR GLORY</h3><p>Recognition for his outstanding football performances.</p></div></div>
+<div class="card"><img src="./Images/alnassr-presentation.jpg" alt="Al Nassr presentation"><div class="card-content"><h3>AL NASSR ARRIVAL</h3><p>The beginning of a new chapter in Saudi football.</p></div></div>
+<div class="card"><img src="./Images/free-kick-2008.jpg" alt="Free kick"><div class="card-content"><h3>FREE-KICK SPECIALIST</h3><p>His powerful and memorable free kicks.</p></div></div>
+<div class="card"><img src="./Images/tottenham-hattrick.jpg" alt="Hat trick"><div class="card-content"><h3>THE HAT-TRICK</h3><p>A memorable three-goal performance against Tottenham in 2022.</p></div></div>
+<div class="card"><img src="./Images/nations-2025.jpg" alt="Nations League"><div class="card-content"><h3>PORTUGAL 2025</h3><p>Portugal's Nations League triumph.</p></div></div>
+</div>
+</div>
+</section>
+
+<section style="background:#101010">
+<div class="container">
+<div class="heading"><h2>THE CLUB <span class="gold">CHAPTERS</span></h2><div class="line"></div><p>Different clubs, one legendary journey.</p></div>
+<div class="cards">
+<div class="card"><img src="./Images/sporting.jpg" alt="Sporting"><div class="card-content"><h3>SPORTING CP</h3><p>Where his professional journey began.</p></div></div>
+<div class="card"><img src="./Images/manchester.jpg" alt="Manchester United"><div class="card-content"><h3>MANCHESTER UNITED</h3><p>His breakthrough into international stardom.</p></div></div>
+<div class="card"><img src="./Images/realmadrid.jpg" alt="Real Madrid"><div class="card-content"><h3>REAL MADRID</h3><p>A remarkable and trophy-filled chapter.</p></div></div>
+<div class="card"><img src="./Images/juventus.jpg" alt="Juventus"><div class="card-content"><h3>JUVENTUS</h3><p>Continued his success in Italian football.</p></div></div>
+<div class="card"><img src="./Images/alnassr.jpg" alt="Al Nassr"><div class="card-content"><h3>AL NASSR</h3><p>A new chapter in Saudi Arabian football.</p></div></div>
+<div class="card"><img src="./Images/portugal.jpg" alt="Portugal"><div class="card-content"><h3>PORTUGAL</h3><p>His international career and national team journey.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="trophies">
+<div class="container">
+<div class="heading"><h2>THE <span class="gold">TROPHY ROOM</span></h2><div class="line"></div><p>A selection of his major achievements.</p></div>
+<div class="trophies">
+<div class="trophy"><div class="symbol">🏆</div><h3>5 Ballon d'Or</h3><p>Individual awards</p></div>
+<div class="trophy"><div class="symbol">⭐</div><h3>5 Champions League</h3><p>European club titles</p></div>
+<div class="trophy"><div class="symbol">🇵🇹</div><h3>Euro 2016</h3><p>European champion</p></div>
+<div class="trophy"><div class="symbol">🌍</div><h3>Nations League</h3><p>2019 and 2025</p></div>
+<div class="trophy"><div class="symbol">🏅</div><h3>3 Premier League</h3><p>Manchester United</p></div>
+<div class="trophy"><div class="symbol">⚪</div><h3>2 La Liga</h3><p>Real Madrid</p></div>
+<div class="trophy"><div class="symbol">⚫</div><h3>2 Serie A</h3><p>Juventus</p></div>
+<div class="trophy"><div class="symbol">🥇</div><h3>Club World Cup</h3><p>Four titles</p></div>
+</div>
+<div class="photo-row">
+<img src="./Images/first-ballon.jpg" alt="First Ballon d'Or">
+<img src="./Images/serie-a-trophy.jpg" alt="Serie A">
+<img src="./Images/premier-league.jpg" alt="Premier League">
+<img src="./Images/arab-cup.jpg" alt="Arab Cup">
+</div>
+</div>
+</section>
+
+<section id="records" style="background:#101010">
+<div class="container">
+<div class="heading"><h2>RECORDS & <span class="gold">ACHIEVEMENTS</span></h2><div class="line"></div><p>Milestones that made his career remarkable.</p></div>
+<div class="records">
+<div class="record"><h3>INTERNATIONAL FOOTBALL</h3><p>One of the most capped and highest-scoring men's international players.</p></div>
+<div class="record"><h3>CHAMPIONS LEAGUE</h3><p>The competition's all-time leading goalscorer.</p></div>
+<div class="record"><h3>GOALSCORING</h3><p>Known for scoring with both feet and his head.</p></div>
+<div class="record"><h3>FIVE BALLON D'OR AWARDS</h3><p>Won the award five times.</p></div>
+<div class="record"><h3>LONGEVITY</h3><p>Maintained an elite career across multiple decades.</p></div>
+<div class="record"><h3>PORTUGAL CAPTAIN</h3><p>Led Portugal through major international tournaments.</p></div>
+</div>
+</div>
+</section>
+
+<section class="portugal">
+<div class="container">
+<div class="heading"><h2>PORTUGAL <span class="gold">FOREVER</span></h2><div class="line"></div><p>Representing his country on the world stage.</p></div>
+<div class="portugal-grid">
+<img class="portugal-image" src="./Images/euro2016.jpg" alt="Portugal Euro 2016">
+<div><h3>THE NATIONAL TEAM LEGEND</h3>
+<p>Ronaldo has represented Portugal throughout his international career and became the team's captain.</p>
+<p>His journey includes Euro 2004, Euro 2016, the FIFA World Cup and UEFA Nations League.</p>
+<p>Euro 2016 was a historic moment for Portugal, as the country won its first major international tournament.</p></div>
+</div>
+<div class="photo-row">
+<img src="./Images/portugal-2004.jpg" alt="Portugal 2004">
+<img src="./Images/worldcup-2018.jpg" alt="World Cup 2018">
+<img src="./Images/euro-medal.jpg" alt="Euro medal">
+<img src="./Images/euro-2024.jpg" alt="Euro 2024">
+</div>
+</div>
+</section>
+
+<section id="gallery">
+<div class="container">
+<div class="heading"><h2>THE ULTIMATE <span class="gold">CR7 GALLERY</span></h2><div class="line"></div><p>All 50 photographs mixed together.</p></div>
+<input class="search" id="search" type="search" placeholder="Search Ronaldo photographs...">
+<div class="gallery" id="gallery"></div>
+<p class="empty" id="empty">No photographs found.</p>
+</div>
+</section>
+
+
+<section id="quiz" style="background:#101010">
+<div class="container">
+<div class="heading">
+<h2>THE CR7 <span class="gold">ULTIMATE CHALLENGE</span></h2>
+<div class="line"></div>
+<p>50 questions. One football legend. Are you a true CR7 expert?</p>
+</div>
+
+<div class="quiz-box">
+<div style="display:flex;justify-content:space-between;margin-bottom:12px">
+<strong id="qNumber">Question 1 / 50</strong>
+<strong id="qScore" class="gold">Score: 0</strong>
+</div>
+
+<div style="height:7px;background:#333;border-radius:10px;margin-bottom:25px">
+<div id="qProgress" style="height:7px;width:2%;background:#e5b957;border-radius:10px"></div>
+</div>
+
+<div id="questionArea">
+<h3 id="questionText" style="margin-bottom:20px"></h3>
+<div id="answerOptions"></div>
+</div>
+
+<p id="answerFeedback" style="margin:18px 0;color:#e5b957"></p>
+
+<button class="btn" id="nextQuestion" disabled>NEXT QUESTION →</button>
+
+<div id="finalResult" style="display:none;text-align:center">
+<h2 class="gold" style="font:900 35px Orbitron">QUIZ COMPLETED!</h2>
+<p id="finalScore" style="font-size:25px;margin:20px"></p>
+<p id="finalMessage" style="margin-bottom:25px"></p>
+<button class="btn" id="restartQuiz">RESTART QUIZ ↻</button>
+</div>
+</div>
+</div>
+</section>
+
+<script>
+const cr7Questions = [
+["Where was Cristiano Ronaldo born?",["Funchal","Lisbon","Porto","Madrid"],0],
+["On which date was Ronaldo born?",["5 February 1985","5 March 1985","7 February 1986","10 January 1985"],0],
+["What is Ronaldo's full name?",["Cristiano Ronaldo dos Santos Aveiro","Cristiano Ronaldo Silva","Cristiano Aveiro Santos","Ronaldo Cristiano Pereira"],0],
+["Which country does Ronaldo represent?",["Brazil","Portugal","Spain","Argentina"],1],
+["Which position is Ronaldo best known for playing?",["Goalkeeper","Defender","Forward","Centre-back"],2],
+["Which club did Ronaldo join as a young professional?",["Sporting CP","Chelsea","Barcelona","Bayern Munich"],0],
+["Which English club signed Ronaldo in 2003?",["Arsenal","Liverpool","Manchester United","Manchester City"],2],
+["Who was Manchester United's manager when Ronaldo first joined?",["José Mourinho","Sir Alex Ferguson","Carlo Ancelotti","Pep Guardiola"],1],
+["What shirt number became famous for Ronaldo?",["7","10","9","11"],0],
+["In which year did Ronaldo win his first Ballon d'Or?",["2006","2007","2008","2009"],2],
+["Which club did Ronaldo join in 2009?",["Juventus","Real Madrid","AC Milan","Paris Saint-Germain"],1],
+["Which Spanish stadium was Real Madrid's home during Ronaldo's time there?",["Camp Nou","Santiago Bernabéu","Metropolitano","Mestalla"],1],
+["Against which club did Ronaldo score his famous bicycle kick in 2018?",["Barcelona","Juventus","Bayern Munich","Liverpool"],1],
+["How many Champions League titles did Ronaldo win as a player?",["3","4","5","6"],2],
+["Which club did Ronaldo join in 2018?",["Juventus","Chelsea","Inter Milan","Napoli"],0],
+["Which country hosted Juventus in its domestic league?",["France","Germany","Italy","Spain"],2],
+["In which year did Ronaldo return to Manchester United?",["2019","2020","2021","2022"],2],
+["Which Saudi club did Ronaldo join in 2023?",["Al Hilal","Al Nassr","Al Ittihad","Al Ahli"],1],
+["Which national team did Ronaldo captain?",["Portugal","Brazil","France","Italy"],0],
+["Which major international tournament did Portugal win in 2016?",["World Cup","Copa América","European Championship","Asian Cup"],2],
+["Who did Portugal defeat in the Euro 2016 final?",["Germany","France","Spain","Italy"],1],
+["Which country hosted the 2004 European Championship?",["Portugal","Germany","England","Greece"],0],
+["Against which country did Ronaldo score a famous hat-trick at the 2018 World Cup?",["Morocco","Spain","Iran","Uruguay"],1],
+["Which award has Ronaldo won five times?",["Golden Boy","Ballon d'Or","Puskás Award","Golden Glove"],1],
+["What is the name of Ronaldo's famous celebration?",["Griddy","SIUUU","Calma","Robot"],1],
+["Which foot does Ronaldo commonly use to take powerful shots?",["Left only","Right only","Both feet","Neither foot"],2],
+["What is Ronaldo particularly famous for in the air?",["Long throws","Heading","Goalkeeping","Tackling"],1],
+["Which team did Ronaldo face in the 2008 Champions League final?",["Chelsea","Barcelona","Liverpool","Arsenal"],0],
+["Which club did Ronaldo score against in that 2008 final?",["Chelsea","Arsenal","Inter Milan","Roma"],0],
+["Which Portuguese city is Ronaldo's birthplace?",["Porto","Funchal","Braga","Coimbra"],1],
+["What is the name of Ronaldo's famous CR7 brand?",["CR7","CR10","CR9","CR11"],0],
+["Which tournament did Portugal win in 2019?",["Nations League","World Cup","Copa América","Confederations Cup"],0],
+["Which tournament did Portugal win again in 2025?",["Euro 2024","Nations League","World Cup","Olympics"],1],
+["Which country did Portugal defeat in the 2019 Nations League final?",["Netherlands","France","Germany","England"],0],
+["Which club did Ronaldo play for immediately before Juventus?",["Manchester United","Real Madrid","Sporting CP","Al Nassr"],1],
+["Which country is Real Madrid based in?",["Italy","Portugal","Spain","England"],2],
+["Which country is Manchester United based in?",["England","Spain","France","Italy"],0],
+["Which country is Juventus based in?",["Germany","Italy","Spain","England"],1],
+["Which country is Al Nassr based in?",["Qatar","Saudi Arabia","UAE","Oman"],1],
+["What is the name of Ronaldo's mother?",["Maria Dolores","Ana Silva","Isabel Santos","Maria Costa"],0],
+["What is Ronaldo's famous nickname?",["The Pharaoh","CR7","The Magician","The Wall"],1],
+["Which international competition is played every four years between European national teams?",["Euro","Copa América","Asian Cup","Gold Cup"],0],
+["Which award recognises a particularly outstanding goal?",["Golden Glove","FIFA Puskás Award","Golden Boot","Golden Boy"],1],
+["Which team did Ronaldo play for in the 2006 World Cup?",["Portugal","Brazil","Spain","Argentina"],0],
+["Which club did Ronaldo first play for in England?",["Chelsea","Manchester United","Liverpool","Arsenal"],1],
+["Which famous stadium is associated with Manchester United?",["Anfield","Old Trafford","Emirates Stadium","Stamford Bridge"],1],
+["Which famous stadium is associated with Juventus?",["Allianz Stadium","San Siro","Wembley","Bernabéu"],0],
+["What is Ronaldo's main shirt number with Portugal historically?",["7","10","8","4"],0],
+["What type of kick was Ronaldo's famous 2018 goal against Juventus?",["Scissor kick","Bicycle kick","Penalty","Corner kick"],1],
+["Which country did Ronaldo lead to the 2016 European Championship title?",["Portugal","France","Spain","Belgium"],0]
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+const questionText = document.getElementById("questionText");
+const answerOptions = document.getElementById("answerOptions");
+const feedback = document.getElementById("answerFeedback");
+const nextButton = document.getElementById("nextQuestion");
+
+function showQuestion() {
+ answered = false;
+ const q = cr7Questions[currentQuestion];
+
+ document.getElementById("qNumber").textContent =
+ "Question " + (currentQuestion + 1) + " / 50";
+
+ document.getElementById("qScore").textContent = "Score: " + score;
+ document.getElementById("qProgress").style.width =
+ ((currentQuestion + 1) / 50 * 100) + "%";
+
+ questionText.textContent = q[0];
+ answerOptions.innerHTML = "";
+ feedback.textContent = "";
+ nextButton.disabled = true;
+ nextButton.textContent =
+ currentQuestion === 49 ? "SEE MY FINAL SCORE →" : "NEXT QUESTION →";
+
+ q[1].forEach((answer, index) => {
+  const button = document.createElement("button");
+  button.textContent = String.fromCharCode(65 + index) + ". " + answer;
+  button.style.cssText =
+   "display:block;width:100%;text-align:left;padding:14px;margin:9px 0;background:#222;color:white;border:1px solid #555;border-radius:6px;font-size:14px;cursor:pointer";
+
+  button.addEventListener("click", () => selectAnswer(index, button));
+  answerOptions.appendChild(button);
+ });
+}
+
+function selectAnswer(selected, selectedButton) {
+ if (answered) return;
+ answered = true;
+
+ const correct = cr7Questions[currentQuestion][2];
+ const buttons = answerOptions.querySelectorAll("button");
+
+ buttons.forEach((button, index) => {
+  button.disabled = true;
+  button.style.opacity = "0.8";
+
+  if (index === correct) {
+   button.style.border = "2px solid #36c878";
+   button.style.background = "#123b29";
+  }
+ });
+
+ if (selected === correct) {
+  score++;
+  feedback.textContent = "✓ CORRECT! SIUUUU!";
+ } else {
+  feedback.textContent =
+   "✗ NOT QUITE! Correct answer: " +
+   cr7Questions[currentQuestion][1][correct];
+  selectedButton.style.border = "2px solid #e34b4b";
+ }
+
+ document.getElementById("qScore").textContent = "Score: " + score;
+ nextButton.disabled = false;
+}
+
+function finishQuiz() {
+ document.getElementById("questionArea").style.display = "none";
+ feedback.style.display = "none";
+ nextButton.style.display = "none";
+ document.getElementById("finalResult").style.display = "block";
+
+ const percentage = Math.round(score / 50 * 100);
+ document.getElementById("finalScore").textContent =
+ score + " / 50  (" + percentage + "%)";
+
+ let message;
+ if (score >= 45) message = "🐐 CR7 SUPER EXPERT! LEGENDARY!";
+ else if (score >= 35) message = "🔥 AMAZING! TRUE CR7 FAN!";
+ else if (score >= 25) message = "⚽ GREAT JOB! YOU KNOW YOUR FOOTBALL!";
+ else if (score >= 15) message = "👏 GOOD TRY! KEEP LEARNING!";
+ else message = "⚽ KEEP PRACTISING! THE CR7 JOURNEY CONTINUES!";
+
+ document.getElementById("finalMessage").textContent = message;
+ document.getElementById("qNumber").textContent = "QUIZ FINISHED";
+ document.getElementById("qProgress").style.width = "100%";
+}
+
+nextButton.addEventListener("click", () => {
+ if (!answered) return;
+
+ if (currentQuestion === 49) {
+  finishQuiz();
+ } else {
+  currentQuestion++;
+  showQuestion();
+ }
+});
+
+document.getElementById("restartQuiz").addEventListener("click", () => {
+ currentQuestion = 0;
+ score = 0;
+ document.getElementById("questionArea").style.display = "block";
+ feedback.style.display = "block";
+ nextButton.style.display = "inline-block";
+ document.getElementById("finalResult").style.display = "none";
+ showQuestion();
+});
+
+showQuestion();
+</script>
+
+<section class="final">
+<h2>NEVER GIVE UP.</h2>
+<p>WORK HARD. DREAM BIG. MAKE HISTORY.</p>
+<a href="#home" class="btn">BACK TO TOP</a>
+</section>
+
+<footer>
+    <h2>CR7 LEGENDS</h2>
+    <p>An unofficial fan-made tribute to Cristiano Ronaldo.</p>
+    <p>Created for football fans.</p>
+    <p>Photograph rights belong to their respective owners.</p>
+    <p>© 2026 CR7 LEGENDS</p>
+    <p class="creator">Made with passion by <strong>Abdul Sami</strong> ⚽</p>
+</footer>
+
+<button class="back-top" id="top" aria-label="Back to top">↑</button>
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true"><button class="close" id="close"
+onclick="document.getElementById('lightbox').classList.remove('open')">
+×
+</button><img src="" id="largeImage" alt="Enlarged Ronaldo photograph">
+</div>
+
+<script>
+const menu=document.getElementById('menu');
+const links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+const topButton=document.getElementById('top');
+window.addEventListener('scroll',()=>topButton.classList.toggle('show',window.scrollY>400));
+topButton.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+const photos=[
+['cr7-main.jpg','Main Ronaldo Portrait'],
+['sporting.jpg','Sporting Lisbon'],
+['manchester.jpg','Manchester United'],
+['realmadrid.jpg','Real Madrid'],
+['juventus.jpg','Juventus'],
+['alnassr.jpg','Al Nassr'],
+['portugal.jpg','Portugal'],
+['euro2016.jpg','Euro 2016 Victory'],
+['ballondor.jpg','Ballon d’Or'],
+['siuuu.jpg','SIUUU Celebration'],
+['young-ronaldo.jpg','Young Ronaldo'],
+['united-2003.jpg','Manchester United 2003'],
+['ucl-2008.jpg','Champions League 2008'],
+['first-ballon.jpg','First Ballon d’Or'],
+['madrid-presentation.jpg','Madrid Presentation'],
+['bicycle-kick.jpg','Bicycle Kick'],
+['ucl-celebration.jpg','Champions League Celebration'],
+['portugal-2004.jpg','Portugal Euro 2004'],
+['worldcup-2018.jpg','World Cup 2018'],
+['euro-medal.jpg','Euro Medal'],
+['juventus-presentation.jpg','Juventus Presentation'],
+['alnassr-presentation.jpg','Al Nassr Presentation'],
+['bernabeu-siuuu.jpg','Bernabeu SIUUU'],
+['training.jpg','Portugal Training'],
+['nations-league.jpg','Nations League 2025'],
+['premier-league.jpg','Premier League Trophy'],
+['champions-final-2008.jpg','Champions League Final 2008'],
+['old-trafford.jpg','Old Trafford'],
+['ballon-2013.jpg','Ballon d’Or 2013'],
+['ucl-2014.jpg','Champions League 2014'],
+['ballon-2016.jpg','Ballon d’Or 2016'],
+['ucl-2017.jpg','Champions League 2017'],
+['bicycle-juventus.jpg','Bicycle Kick vs Juventus'],
+['world-cup-2018.jpg','World Cup Match 2018'],
+['juventus-season.jpg','Juventus Season'],
+['united-return.jpg','Manchester United Return'],
+['alnassr-debut.jpg','Al Nassr Debut'],
+['arab-cup.jpg','Arab Club Champions Cup'],
+['nations-2025.jpg','Nations League 2025 Victory'],
+['number-seven.jpg','Number Seven'],
+['free-kick-2008.jpg','Manchester United Free Kick'],
+['la-decima.jpg','La Decima'],
+['euro-semi-final.jpg','Euro 2016 Semi Final'],
+['nations-2019.jpg','Nations League 2019'],
+['serie-a-trophy.jpg','Serie A Trophy'],
+['tottenham-hattrick.jpg','Tottenham Hat Trick'],
+['qatar-2022.jpg','World Cup Qatar 2022'],
+['alnassr-2024.jpg','Al Nassr 2024'],
+['euro-2024.jpg','Euro 2024'],
+['alnassr-2025.jpg','Al Nassr 2025']
+];
+
+const mixedPhotos=[...photos];
+for(let i=mixedPhotos.length-1;i>0;i--){
+ const j=Math.floor(Math.random()*(i+1));
+ [mixedPhotos[i],mixedPhotos[j]]=[mixedPhotos[j],mixedPhotos[i]];
+}
+
+const gallery=document.getElementById('gallery');
+const empty=document.getElementById('empty');
+const imageFolder='./Images/';
+
+function displayGallery(searchText=''){
+ gallery.innerHTML='';
+ let count=0;
+ mixedPhotos.forEach(photo=>{
+  if(!photo[1].toLowerCase().includes(searchText.toLowerCase()))return;
+  const card=document.createElement('div');
+  card.className='gallery-card';
+  const img=document.createElement('img');
+  img.src=imageFolder+photo[0];
+  img.alt=photo[1];
+  img.loading='lazy';
+  img.addEventListener('error',()=>card.remove());
+  img.addEventListener('click',()=>{
+   document.getElementById('largeImage').src=img.src;
+   document.getElementById('lightbox').classList.add('open');
+  });
+  const caption=document.createElement('p');
+  caption.textContent=photo[1];
+  card.append(img,caption);
+  gallery.appendChild(card);
+  count++;
+ });
+ empty.style.display=count===0?'block':'none';
+}
+displayGallery();
+
+document.getElementById('search').addEventListener('input',e=>displayGallery(e.target.value));
+
+const lightbox=document.getElementById('lightbox');
+document.getElementById('close').addEventListener('click',()=>lightbox.classList.remove('open'));
+lightbox.addEventListener('click',e=>{if(e.target===lightbox)lightbox.classList.remove('open')});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')lightbox.classList.remove('open')});
+
+const correct={q1:'b',q2:'c',q3:'a',q4:'b',q5:'b',q6:'a',q7:'b',q8:'c'};
+document.getElementById('quizForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ let score=0;
+ Object.entries(correct).forEach(([q,a])=>{
+  const selected=e.target.querySelector('input[name="'+q+'"]:checked');
+  if(selected&&selected.value===a)score++;
+ });
+ let message=score===8?'🏆 PERFECT! CR7 MASTER!':score>=6?'🔥 AMAZING WORK!':score>=4?'⚽ GOOD JOB!':'KEEP PRACTISING!';
+ document.getElementById('result').textContent='YOUR SCORE: '+score+'/8 — '+message;
+});
+document.getElementById('quizForm').addEventListener('reset',()=>{
+ document.getElementById('result').textContent='';
+});
+</script>
+</body>
+</html>
